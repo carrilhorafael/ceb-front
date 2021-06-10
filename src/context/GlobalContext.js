@@ -6,10 +6,11 @@ export const GlobalContext = React.createContext()
 export const GlobalProvider = ({children}) => {
     const [user, setUser] = React.useState({})
 
-    const handleLogin = (userData) => {
+    const handleLogin = (userData, history) => {
         fetchLogin(userData).then(resp => {
             localStorage.setItem("token", resp.data.token)
             setUser(resp.data.user)
+            history.push = "/"
         })
     }
 
