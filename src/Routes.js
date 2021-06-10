@@ -1,35 +1,64 @@
-import React from 'react'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import React, { useContext } from 'react'
+import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom'
+import { GlobalContext } from './context/GlobalContext'
 import Confirmate from './pages/confirmate/Confirmate'
+import Home from './pages/home/Home'
 import Landing from './pages/landing/Landing'
 import Login from './pages/login/Login'
 import SignUp from './pages/signup/SignUp'
 
-const CustomRoute = () => {
+// const CustomRoute = ({ isPrivate, link, component, user, authenticated }) => {
+//     console.log(link, authenticated, isPrivate)
+//     if ((isPrivate && authenticated) || (!isPrivate && !authenticated)){
+//         console.log("aqui")
+//         return <Route path={link} component={component}/>
+//     }
+//     else if(isPrivate && !authenticated){
+//         return <Redirect to="/"/>
+//     }
+//     else if(!isPrivate && authenticated){
+//         return <Redirect to="/home"/>
+//     }
     
-}
+// }
 
 export default function Routes (){
-
+    const {user, authenticated} = useContext(GlobalContext)
     return (
         <Router>
             <Switch>
-                <Route exact path= "/">
-                    <Landing/>
+                <Route exact path="/" >
+                    {authenticated?
+                        <Redirect to="/home" />
+                        :
+                        <Landing/>    
+                    }
                 </Route>
-                <Route path= "/login">
-                    <Login/>
+                <Route exact path="/login" >
+                    {authenticated?
+                        <Redirect to="/home" />
+                        :
+                        <Login />    
+                    }
                 </Route>
-                <Route path= "/sign_up">
-                    <SignUp/>
+                <Route exact path="/sign_up" >
+                    {authenticated?
+                        <Redirect to="/home"/>
+                        :
+                        <SignUp/>
+                    }
                 </Route>
-                <Route path= "/confirmate/*" >
+                <Route exact path="/confirmate">
                     <Confirmate/>
                 </Route>
-                <Route path= "/home">
-                    <Home/>
+                <Route exact path="/home" >
+                    {authenticated?
+                        <Home/>
+                        :
+                        <Redirect to="/"/>
+                    }
                 </Route>
-                {/* <Route exact path= "/home"/> */}
+
             </Switch>
         </Router>
     )
