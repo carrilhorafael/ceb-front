@@ -10,7 +10,8 @@ export default function Login () {
     const [password, setPassword] = useState('')
     const history = useHistory()
 
-    const handleSubmit = () => {
+    const handleSubmit = e => {
+        e.preventDefault()
         let userData = {
             user: {
                 credential: credential,
@@ -22,7 +23,6 @@ export default function Login () {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-
                 <fieldset>
                     <label htmlFor="credential">Digite seu cpf ou email</label>
                     <input value={credential} name="credential" onChange={e => setCredential(e.target.value)}></input>

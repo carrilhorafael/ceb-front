@@ -10,7 +10,7 @@ export const GlobalProvider = ({children}) => {
         fetchLogin(userData).then(resp => {
             localStorage.setItem("token", resp.data.token)
             setUser(resp.data.user)
-            history.push = "/"
+            history.push("/")
         })
     }
 
