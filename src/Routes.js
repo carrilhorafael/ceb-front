@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom'
+import Header from './common/header/Header'
 import { GlobalContext } from './context/GlobalContext'
 import Delivermen from './pages/admin/delivermen'
 import ListUsers from './pages/admin/list_users'
@@ -43,6 +44,7 @@ const CustomRoute = ({isPrivate, rolePermitted, link, component}) => {
 export default function Routes (){
     return (
         <Router>
+            <Header/>
             <Switch>
                 <Route exact path="/" component={Landing}/>
                 <Route exact path="/login" component={Login}/>

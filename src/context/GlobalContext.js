@@ -39,12 +39,20 @@ export const GlobalProvider = ({children}) => {
             }
         })
     }
+    const handleLogout = (history) => {
+        localStorage.removeItem("token")
+        localStorage.removeItem("user")
+        setUser({})
+        setAuthenticated(false)
+        history.push("/")
+    }
 
     return (
         <GlobalContext.Provider 
             value={{
                 user,
                 authenticated,
+                handleLogout,
                 handleLogin
             }}>
                 {children}
