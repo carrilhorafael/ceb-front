@@ -14,7 +14,7 @@ export const GlobalProvider = ({children}) => {
             setAuthenticated(true)
         }
     }, [])
-    
+
     const handleLogin = (userData, history) => {
         fetchLogin(userData).then(resp => {
             localStorage.setItem("token", resp.data.token)
@@ -22,7 +22,21 @@ export const GlobalProvider = ({children}) => {
             setUser(resp.data.user)
             api.defaults.headers.Authorization = resp.data.token
             setAuthenticated(true)
-            history.push("/")
+            switch (resp.data.user.role) {
+                case "Cliente":
+                    history.push("/client/restaurants")
+                    break;
+                case "Entregador" || "Entregador (Em validação)":
+                    history.push("/deliveryman/deliverys")
+                    break;
+                case "Dono de restaurante":
+                    history.push("/owner/restaurant")
+                    break;
+                case "Administrador":
+                    history.push("/admin/list_users")
+                    break;
+    
+            }
         })
     }
 
