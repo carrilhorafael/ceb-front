@@ -10,30 +10,29 @@ import SignUp from './pages/signup'
 
 const CustomRoute = ({isPrivate, rolePermitted, link, component}) => {
     const {user, authenticated} = useContext(GlobalContext)
-    if ((!isPrivate && authenticated) || ((isPrivate && authenticated) && (user.role != rolePermitted))){
+    if ((!isPrivate && authenticated) || ((isPrivate && authenticated) && (user.role !== rolePermitted))){
+        console.log("1ª if")
         // Jogar para a primeira página da role
         switch (user.role) {
             case "Cliente":
-                <Redirect to="client/restaurants"/>
-                break;
+                return <Redirect to="client/restaurants"/>;
             case "Entregador" || "Entregador (Em validação)":
-                <Redirect to="deliveryman/deliveries"/>
-                break;
+                return <Redirect to="deliveryman/deliveries"/>
             case "Dono de restaurante":
-                <Redirect to="owner/restaurant"/>
-                break;
+                return <Redirect to="owner/restaurant"/>
             case "Administrador":
-                <Redirect to="admin/list_users"/>
-                break;
+                return <Redirect to="admin/list_users"/>
+            }
         }
-    }
     else if (isPrivate && !authenticated){
-        <Redirect to="/"/>
+        console.log("2ª if")
+        return <Redirect to="/"/>
     }
     else{
-        <Route exact path={link} component={component}/>
+        console.log("3ª if", authenticated, isPrivate, component)
+        return <Route exact path={link} component={component}/>
     }
-
+    
 }
 
 export default function Routes (){
@@ -60,9 +59,9 @@ export default function Routes (){
                 {/**************** ADMIN PAGES ****************/}
                 <CustomRoute link="/admin/list_users" component={Restaurants} isPrivate={true} rolePermitted="Administrador"/>
                 <CustomRoute link="/admin/list_deliverymen" component={Restaurants} isPrivate={true} rolePermitted="Administrador"/>
-                <CustomRoute link="/owner/restaurant" component={Restaurants} isPrivate={true} rolePermitted="Dono de restaurante"/>
                 
                 {/**************** OWNER PAGES ****************/}
+                <CustomRoute link="/owner/restaurant" component={Restaurants} isPrivate={true} rolePermitted="Dono de restaurante"/>
                 <CustomRoute link="/owner/create_restaurant" component={Restaurants} isPrivate={true} rolePermitted="Dono de restaurante"/>
                 <CustomRoute link="/owner/results" component={Restaurants} isPrivate={true} rolePermitted="Dono de restaurante"/>
                 <CustomRoute link="/owner/orders" component={Restaurants} isPrivate={true} rolePermitted="Dono de restaurante"/>
