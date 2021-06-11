@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom'
 import { GlobalContext } from './context/GlobalContext'
+import Delivermen from './pages/admin/delivermen'
+import ListUsers from './pages/admin/list_users'
 import Restaurants from './pages/client/restaurants'
 import Confirmate from './pages/confirmate'
 import EditProfile from './pages/edit_profile'
@@ -60,8 +62,8 @@ export default function Routes (){
                 <Route exact path="/delivery/wallet" component={Restaurants}/>
                 
                 {/**************** ADMIN PAGES ****************/}
-                <Route exact path="/admin/list_users" component={Restaurants}/>
-                <Route exact path="/admin/list_deliverymen" component={Restaurants}/>
+                <Route exact path="/admin/list_users" component={ListUsers}/>
+                <Route exact path="/admin/list_deliverymen" component={Delivermen}/>
                 
                 {/**************** OWNER PAGES ****************/}
                 <Route exact path="/owner/restaurant" component={Restaurants}/>

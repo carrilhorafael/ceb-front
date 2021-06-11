@@ -23,3 +23,11 @@ export function getAllRestaurants (){
 export function getUniqueRestaurant (id){
     return api.get(`restaurants/${id}`)
 }
+
+export function getDeliverymen (){
+    return api.get("/delivermen")
+}
+
+export function getUsers (){
+    return api.get("/users")
+}
