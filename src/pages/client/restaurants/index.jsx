@@ -17,7 +17,7 @@ export default function Restaurants () {
             <h1>O que vamos pedir hoje?</h1>
             <div className="index_grid_restaurants">
                 {restaurants.map(restaurant => (
-                    <div key={restaurant.id} onClick={()=>{history.push(`/client/restaurant/${restaurant.id}`)}} className="index_grid_item">
+                    <div key={restaurant.id} onClick={()=>{history.push(`/client/restaurant?id=${restaurant.id}`)}} className="index_grid_item">
                         <div className="restaurantLogo"></div>
                         <div>
                             <p className="restaurantName">{restaurant.name}</p>
