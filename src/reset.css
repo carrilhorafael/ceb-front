@@ -3,6 +3,9 @@
    License: none (public domain)
 */
 
+:root{
+	font-family: sans-serif
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -30,6 +33,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	min-height: 100%;
 }
 ol, ul {
 	list-style: none;
@@ -45,4 +49,18 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+h1{
+	font-size: 32px;
+	margin: 50px 0;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+h1::after{
+	content:"";
+	height: 1px;
+	background-color: rebeccapurple;
+
 }

@@ -1,0 +1,38 @@
+.index_grid_restaurants{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.index_grid_item{
+    background-color: #e5e5e5;
+    padding: 10px;
+    margin: 5px;
+    display: flex;
+}
+.index_grid_item:hover{
+    background-color: rebeccapurple;
+}
+.index_grid_item div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.restaurantName{
+    font-weight: 600;
+
+}
+.restaurantTypeFood{
+    font-weight: 100;
+}
+
+.restaurantLogo{
+    background-color: #333;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+
+
+}

@@ -15,3 +15,7 @@ export function postSignUp (userData) {
 export function postConfirmation (token){
     return api.post("auth/confirm", {validation_token: token})
 }
+
+export function getAllRestaurants (){
+    return api.get("restaurants")
+}
