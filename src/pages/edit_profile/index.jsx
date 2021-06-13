@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { GlobalContext } from '../../context/GlobalContext'
 
@@ -19,7 +19,7 @@ export default function EditProfile () {
     return (
         <div>
             <h1>Editar perfil</h1>
-            <form onSubmit={handleSubmit}>
+            <form >
                 <fieldset>
                     <label htmlFor="name">Edite seu nome</label>
                     <input value={name} name="name" onChange={e => setName(e.target.value)}></input>
