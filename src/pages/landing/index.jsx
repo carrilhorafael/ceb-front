@@ -15,7 +15,7 @@ export default function Landing () {
                     <div>
                         <p>Está com fome?</p>
                         <p>Crie sua conta</p>
-                        <Link to='/login?role=1'>></Link>
+                        <Link to='/sign_up?role=1'>></Link>
                     </div>
                 </div>
                 <div className="cards_auth_landing">
@@ -23,12 +23,15 @@ export default function Landing () {
                     <div>
                         <p>É entregador?</p>
                         <p>Cadastre-se aqui</p>
-                        <Link to='/login?role=2'>></Link>
+                        <Link to='/sign_up?role=2'>></Link>
                     </div>
                 </div>
             </div>
             <div>
-                
+                <div className="main_container">
+                    <p>Conheça alguns dos nossos restaurantes</p>
+
+                </div>
             </div>
         </>
     )

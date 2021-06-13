@@ -9,7 +9,7 @@
 .cards_auth_image{
     background-color: #666;
     width: 100%;
-    height: 110px;
+    height: 150px;
 }
 .cards_auth_landing{
     display: flex;
@@ -27,12 +27,12 @@
 .cards_auth_landing div:last-of-type{
     display: flex;
     flex-direction: column;
-    height: 100%;
+    /* height: 100%; */
 
 }
 .cards_auth_landing div > p{
     font-weight: bold;
-    margin: 15px 0 15px 10px;
+    margin: 15px 0 5px 10px;
 }
 .cards_auth_landing div a{
     align-self: flex-end;

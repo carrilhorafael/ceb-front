@@ -13,7 +13,7 @@ export default function SignUp () {
     const [number, setNumber] = useState("132")
     const [city, setCity] = useState("Niteroi")
     const [state, setState] = useState("Rio de Janeiro")
-    const [role, setRole] = useState(1)
+    const [role, setRole] = useState(window.location.href.split("?role=")[1])
     const history = useHistory()
     const handleSubmit = e => {
         e.preventDefault()
@@ -86,8 +86,8 @@ export default function SignUp () {
                 <fieldset>
                     <label htmlFor="role">Escolha uma função para se cadastrar</label>
                     <select value={role} name="role" onChange={e => setRole(e.target.value)}>
-                        <option value={1}>Entregador</option>
-                        <option value={2}>Cliente</option>
+                        <option value={1}>Cliente</option>
+                        <option value={2}>Entregador</option>
                     </select>
                 </fieldset>
                 <input type="submit" value="Fazer login"></input>

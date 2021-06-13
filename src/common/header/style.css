@@ -2,6 +2,14 @@
     width: 120px;
     height: 80px;
 }
+.header_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header_container div > a:first-of-type{
+    margin: 0 25px;
+}
 header{
     background-color: #e5e5e5;
 }

@@ -2,15 +2,18 @@ import React, {useContext} from 'react'
 import { GlobalContext } from '../../context/GlobalContext'
 import logo from '../../assets/logo.svg'
 import './style.css'
-import { useHistory } from 'react-router'
+import { useHistory, useLocation } from 'react-router'
 import { Link } from 'react-router-dom'
 
 export default function Header () {
     const {user, authenticated, handleLogout} = useContext(GlobalContext)
     const history = useHistory()
-    return(
-        <header>
-            <div className="main_container">
+    const location = useLocation()
+    if (location.pathname !== "/login" && location.pathname !== "/sign_up"){
+
+        return(
+            <header>
+            <div className="main_container header_container">
 
                 <img className="header_logo" src={logo}></img>
                 {authenticated?
@@ -21,9 +24,16 @@ export default function Header () {
                         <button onClick={() => handleLogout(history)}>Sair</button>
                     </div>
                     :
-                    null
+                    <div>
+                        <Link to="/sign_up?role=1">Cadastre-se</Link>
+                        <Link to="/login">Entrar</Link>
+                    </div>
                 }
             </div>
         </header>
     )
+    }
+    else{
+        return <img className="header_logo" src={logo}></img>
+    }
 }
