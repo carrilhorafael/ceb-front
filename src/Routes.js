@@ -4,6 +4,7 @@ import Header from './common/header/Header'
 import { GlobalContext } from './context/GlobalContext'
 import Delivermen from './pages/admin/delivermen'
 import ListUsers from './pages/admin/list_users'
+import RestaurantShow from './pages/client/restaurant'
 import Restaurants from './pages/client/restaurants'
 import Confirmate from './pages/confirmate'
 import EditProfile from './pages/edit_profile'
@@ -54,7 +55,7 @@ export default function Routes (){
                 
                 {/**************** CLIENT PAGES ****************/}
                 <Route exact path="/client/restaurants" component={Restaurants} />
-                <Route exact path="/client/restaurant/*" component={Restaurants} />
+                <Route exact path="/client/restaurant" component={RestaurantShow} />
                 <Route exact path="/client/wallet" component={Restaurants} />
                 
                 {/**************** DELIVERYMAN PAGES ****************/}
