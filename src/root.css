@@ -4,7 +4,13 @@
 */
 
 :root{
-	font-family: sans-serif
+	font-family: sans-serif;
+	--purple: #7a247d;
+	--cyan: #00ffff;
+	--blue: #29abe2;
+	--yellow: #f5c661;
+	--orange: #ff7e61;
+
 }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -25,6 +31,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	text-decoration: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -33,7 +40,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	min-height: 100%;
+	min-height: 100vh;
 }
 ol, ul {
 	list-style: none;
@@ -58,4 +65,23 @@ h1{
 .main_container{
 	max-width: 1024px;
 	margin: 0 auto;
+}
+button{
+	background-color: var(--purple);
+    color: #fafafa;
+    padding: 5px 30px;
+    margin: 0 auto;
+	border: 0
+}
+.main_button {
+    background-color: var(--purple);
+    color: #fafafa;
+    padding: 10px 30px;
+	margin: 0 auto;
+	box-shadow: 3px 3px #33333330;
+	border: 0;
+}
+.main_button:hover{
+	background-color: var(--cyan);
+	color: #333
 }
