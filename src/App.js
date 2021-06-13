@@ -1,6 +1,6 @@
 import { GlobalProvider } from "./context/GlobalContext";
 import Routes from "./Routes";
-import './reset.css'
+import './root.css'
 
 function App() {
   return (

@@ -10,17 +10,20 @@ export default function Header () {
     const history = useHistory()
     return(
         <header>
-            <img className="header_logo" src={logo}></img>
-            {authenticated?
-                <div>
-                    <Link to="/edit_profile">Editar perfil</Link>
-                    <p>{user.name}</p>
-                    <p>{user.role}</p>
-                    <button onClick={() => handleLogout(history)}>Sair</button>
-                </div>
-                :
-                null
-            }
+            <div className="main_container">
+
+                <img className="header_logo" src={logo}></img>
+                {authenticated?
+                    <div>
+                        <Link to="/edit_profile">Editar perfil</Link>
+                        <p>{user.name}</p>
+                        <p>{user.role}</p>
+                        <button onClick={() => handleLogout(history)}>Sair</button>
+                    </div>
+                    :
+                    null
+                }
+            </div>
         </header>
     )
 }

@@ -52,15 +52,10 @@ table {
 }
 h1{
 	font-size: 32px;
-	margin: 50px 0;
 	text-align: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	font-weight: bolder;
 }
-h1::after{
-	content:"";
-	height: 1px;
-	background-color: rebeccapurple;
-
+.main_container{
+	max-width: 1024px;
+	margin: 0 auto;
 }
