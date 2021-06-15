@@ -1,5 +1,6 @@
 .form_container{
-    margin: 40px 0;
+    max-width: 1024px;
+    margin: 40px auto;
     padding: 10px 30px;
     background-color: #c6c6c6;
     display: flex;

@@ -1,7 +1,6 @@
-import React, { useContext } from 'react'
-import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom'
+import React from 'react'
+import {BrowserRouter as Router,  Route, Switch} from 'react-router-dom'
 import Header from './common/header/Header'
-import { GlobalContext } from './context/GlobalContext'
 import Delivermen from './pages/admin/delivermen'
 import ListUsers from './pages/admin/list_users'
 import RestaurantShow from './pages/client/restaurant'
@@ -12,35 +11,35 @@ import Landing from './pages/landing'
 import Login from './pages/login'
 import SignUp from './pages/signup'
 
-const CustomRoute = ({isPrivate, rolePermitted, link, component}) => {
-    const {user, authenticated} = useContext(GlobalContext)
-    console.log(link)
-    return <Route exact path={link} component={component}/>
+// const CustomRoute = ({isPrivate, rolePermitted, link, component}) => {
+//     const {user, authenticated} = useContext(GlobalContext)
+//     console.log(link)
+//     return <Route exact path={link} component={component}/>
     
-    // if ((!isPrivate && authenticated) || ((isPrivate && authenticated) && (user.role !== rolePermitted))){
-    //     console.log("1ª if")
-    //     // Jogar para a primeira página da role
-    //     switch (user.role) {
-    //         case "Cliente":
-    //             return <Redirect to="client/restaurants"/>;
-    //         case "Entregador" || "Entregador (Em validação)":
-    //             return <Redirect to="deliveryman/deliveries"/>
-    //         case "Dono de restaurante":
-    //             return <Redirect to="owner/restaurant"/>
-    //         case "Administrador":
-    //             return <Redirect to="admin/list_users"/>
-    //         }
-    //     }
-    // else if (isPrivate && !authenticated){
-    //     console.log("2ª if")
-    //     return <Redirect to="/"/>
-    // }
-    // else{
-    //     console.log("3ª if", authenticated, isPrivate, component)
-    //     return <Route exact path={link} component={component}/>
-    // }
+//     // if ((!isPrivate && authenticated) || ((isPrivate && authenticated) && (user.role !== rolePermitted))){
+//     //     console.log("1ª if")
+//     //     // Jogar para a primeira página da role
+//     //     switch (user.role) {
+//     //         case "Cliente":
+//     //             return <Redirect to="client/restaurants"/>;
+//     //         case "Entregador" || "Entregador (Em validação)":
+//     //             return <Redirect to="deliveryman/deliveries"/>
+//     //         case "Dono de restaurante":
+//     //             return <Redirect to="owner/restaurant"/>
+//     //         case "Administrador":
+//     //             return <Redirect to="admin/list_users"/>
+//     //         }
+//     //     }
+//     // else if (isPrivate && !authenticated){
+//     //     console.log("2ª if")
+//     //     return <Redirect to="/"/>
+//     // }
+//     // else{
+//     //     console.log("3ª if", authenticated, isPrivate, component)
+//     //     return <Route exact path={link} component={component}/>
+//     // }
     
-}
+// }
 
 export default function Routes (){
     return (

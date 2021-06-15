@@ -35,6 +35,8 @@ export const GlobalProvider = ({children}) => {
                 case "Administrador":
                     history.push("/admin/list_users")
                     break;
+                default:
+                    break;
     
             }
         })

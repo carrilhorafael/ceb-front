@@ -1,7 +1,8 @@
 import React, {useState, useContext} from 'react'
 import { useHistory } from 'react-router'
+import { Link } from 'react-router-dom'
 import { GlobalContext } from '../../context/GlobalContext'
-
+import './style.css'
 
 export default function Login () {
     const {handleLogin} = useContext(GlobalContext)
@@ -21,18 +22,24 @@ export default function Login () {
         handleLogin(userData, history)
     }
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <fieldset>
-                    <label htmlFor="credential">Digite seu cpf ou email</label>
-                    <input value={credential} name="credential" onChange={e => setCredential(e.target.value)}></input>
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="password">Digite sua senha</label>
-                    <input type="password" value={password} name="password" onChange={e => setPassword(e.target.value)}></input>
-                </fieldset>
-                <input type="submit" value="Fazer login"></input>
+        <section className="section_login">
+            <form className="form_login_container" onSubmit={handleSubmit}>
+                <div className="form_title_div">
+                    <Link to="/">{"<"}</Link>
+                    <h3>Faça login</h3>
+                </div>
+                <div>
+                    <fieldset>
+                        <label htmlFor="credential">Digite seu cpf ou email</label>
+                        <input value={credential} name="credential" onChange={e => setCredential(e.target.value)}></input>
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="password">Digite sua senha</label>
+                        <input type="password" value={password} name="password" onChange={e => setPassword(e.target.value)}></input>
+                    </fieldset>
+                </div>
+                <input className="main_button" type="submit" value="Fazer login"></input>
             </form>
-        </div>
+        </section>
     )
 }
