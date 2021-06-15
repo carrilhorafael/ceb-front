@@ -1,19 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Dropdown } from 'react-bootstrap'
+import { GlobalContext } from '../../context/GlobalContext'
 import './style.css'
 
 export default function HeaderDropdown ({svgimg}){
-
+    const {user} = useContext(GlobalContext)
     return(
         <Dropdown>
             <Dropdown.Toggle variant="success" id="dropdown-basic">
                 <img src={svgimg}></img>
             </Dropdown.Toggle>
 
-            <Dropdown.Menu className="dropdown_menu" id="dropdown_menu">
-                <Dropdown.Item className="dropdown_item" href="#/action-1">Funciona</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Funciona</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Funciona</Dropdown.Item>
+            <Dropdown.Menu id="dropdown_menu">
+                <Dropdown.Header className="dropdown-header" onClick={()=>console.log("testei e funcionou")}>{user.name}</Dropdown.Header>
+                <Dropdown.Item onClick={()=>console.log("testei e funcionou")}>Funciona</Dropdown.Item>
+                <Dropdown.Item onClick={()=>console.log("testei e funcionou")}>Funciona</Dropdown.Item>
+                <Dropdown.Item onClick={()=>console.log("testei e funcionou")}>Funciona</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     )
