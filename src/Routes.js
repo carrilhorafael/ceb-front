@@ -3,8 +3,10 @@ import {BrowserRouter as Router,  Route, Switch} from 'react-router-dom'
 import Header from './common/header/Header'
 import Delivermen from './pages/admin/delivermen'
 import ListUsers from './pages/admin/list_users'
+import Cart from './pages/client/cart'
 import RestaurantShow from './pages/client/restaurant'
 import Restaurants from './pages/client/restaurants'
+import Wallet from './pages/client/wallet'
 import Confirmate from './pages/confirmate'
 import EditProfile from './pages/edit_profile'
 import Landing from './pages/landing'
@@ -55,7 +57,8 @@ export default function Routes (){
                 {/**************** CLIENT PAGES ****************/}
                 <Route exact path="/client/restaurants" component={Restaurants} />
                 <Route exact path="/client/restaurant" component={RestaurantShow} />
-                <Route exact path="/client/wallet" component={Restaurants} />
+                <Route exact path="/client/cart" component={Cart} />
+                <Route exact path="/client/wallet" component={Wallet} />
                 
                 {/**************** DELIVERYMAN PAGES ****************/}
                 <Route exact path="/delivery/deliveries" component={Restaurants}/>

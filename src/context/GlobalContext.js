@@ -6,7 +6,6 @@ export const GlobalContext = React.createContext()
 export const GlobalProvider = ({children}) => {
     const [user, setUser] = React.useState({})
     const [authenticated, setAuthenticated] = React.useState(false)
-
     useEffect(() => {
         if (localStorage.getItem("user") !== null){
             setUser(JSON.parse(localStorage.getItem("user")))

@@ -12,6 +12,7 @@ export default function Header () {
     const {user, authenticated, handleLogout} = useContext(GlobalContext)
     const history = useHistory()
     const location = useLocation()
+
     if (!authenticated && location.pathname === "/sign_up"){    
         return (
             <header className="header_full_container">
@@ -38,10 +39,30 @@ export default function Header () {
         return(
             <header className="header_full_container">
                 <div className="main_container">
-                    <img className="header_logo" src={logo} alt="logo"></img>
-                    <div>
-                        <Link to="/edit_profile">Editar perfil</Link>
-                        <button onClick={() => handleLogout(history)}>Sair</button>
+                    <Link to="/client/restaurants">
+                        <img className="header_logo" src={logo} alt="logo"></img>
+                    </Link>
+                    <div className="header_buttons">
+                        <HeaderDropdown menu={[
+                            {
+                                nome: "Carteira",
+                                onClick: () => history.push('/client/wallet')
+                            },
+                            {
+                                nome: "Editar dados",
+                                onClick: () => history.push('/edit_profile')
+                            },
+                            {
+                                nome: "Sair",
+                                onClick: () => handleLogout(history)
+                            }
+                        ]} 
+                        svgtoggle={usersvg}
+                        header={`Olá, ${user.name.split(" ")[0]}`}
+                        />
+                        <Link to="/client/cart" className='dropdown-toggle'>
+                            <img src={carrinho}></img>
+                        </Link>
                     </div>
                 </div>
             </header>
@@ -51,8 +72,9 @@ export default function Header () {
         return(
             <header className="header_full_container">
                 <div className="main_container">
-                    <img className="header_logo" src={logo} alt="logo"></img>
-
+                    <Link to="/deliveryman/restaurants">
+                        <img className="header_logo" src={logo} alt="logo"></img>
+                    </Link>
                 </div>
             </header>
         )
@@ -61,8 +83,9 @@ export default function Header () {
         return(
             <header className="header_full_container">
                 <div className="main_container">
-                    <img className="header_logo" src={logo} alt="logo"></img>
-
+                    <Link to="/owner/restaurant">
+                        <img className="header_logo" src={logo} alt="logo"></img>
+                    </Link>
                 </div>
             </header>
         )
@@ -71,11 +94,9 @@ export default function Header () {
         return (
             <header className="header_full_container">
                 <div className="main_container">
-                    <img className="header_logo" src={logo} alt="logo"></img>
-                    <div className="header_buttons">
-                        <HeaderDropdown svgimg={usersvg}/>
-                        <HeaderDropdown svgimg={carrinho}/>
-                    </div>
+                    <Link to="/admin/list_users">
+                        <img className="header_logo" src={logo} alt="logo"></img>
+                    </Link>
                 </div>
             </header>
         )

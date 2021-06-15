@@ -19,9 +19,8 @@
 .header_buttons{
     display: flex;
 }
-.dropdown-toggle:first-of-type{
+.dropdown-toggle{
     border: none;
-    margin-right: 10px;
     background: none;
 }
 .dropdown-menu{
@@ -53,3 +52,7 @@
     height: 2px;
     margin: 3px 0;
 } 
+.carrinho{
+    height: 100vmin;
+    width: 250px;
+}
