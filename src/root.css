@@ -42,6 +42,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	min-height: 100vh;
+	background-color: #fafafa;
 }
 ol, ul {
 	list-style: none;
@@ -59,9 +60,10 @@ table {
 	border-spacing: 0;
 }
 h1{
-	font-size: 32px;
+	font-size: 48px;
 	text-align: center;
-	font-weight: bolder;
+	font-weight: bold;
+	color: var(--cyan);
 }
 .main_container{
 	max-width: 1024px;

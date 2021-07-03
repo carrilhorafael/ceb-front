@@ -1,21 +1,26 @@
 .landing_subtitle{
     text-align: center;
+    color: #fafafa;
+    font-size: 1.2rem;
     margin-top: 20px;
 }
 .section_main_landing{
     padding: 100px 0 300px 0;
-    background-color: #e5e5e5;
+    background-color: var(--purple);
 }
 .cards_auth_image{
-    background-color: #666;
+    /* background-color: #666; */
     width: 100%;
     height: 150px;
 }
 .cards_auth_landing{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 300px;
-    background-color: #c6c6c6;
+    min-height: 350px;
+    background-color: var(--yellow);
+    border-radius: 15px;
 }
 .div_auth_cards{
     display: flex;
