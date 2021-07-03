@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import {api, fetchLogin} from '../service/Api'
+import {api, authTokenVerification, fetchLogin} from '../service/Api'
 
 export const GlobalContext = React.createContext()
 
@@ -8,10 +8,18 @@ export const GlobalProvider = ({children}) => {
     const [authenticated, setAuthenticated] = React.useState(false)
     useEffect(() => {
         if (localStorage.getItem("user") !== null){
-            setUser(JSON.parse(localStorage.getItem("user")))
-            api.defaults.headers.Authorization = localStorage.getItem("token")
-            setAuthenticated(true)
+            authTokenVerification().then(()=>{
+                setUser(JSON.parse(localStorage.getItem("user")))
+                api.defaults.headers.Authorization = localStorage.getItem("token")
+                setAuthenticated(true)
+            }).catch(()=>{
+                localStorage.removeItem("token")
+                localStorage.removeItem("user")
+                setUser({})
+                setAuthenticated(false)
+            })
         }
+        console.log(authenticated, user)
     }, [])
 
     const handleLogin = (userData, history) => {

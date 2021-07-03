@@ -7,6 +7,7 @@ import './style.css'
 import { useHistory, useLocation } from 'react-router'
 import { Link } from 'react-router-dom'
 import HeaderDropdown from './HeaderDropdown'
+import HeaderHome from './headers_components/HeaderHome'
 
 export default function Header () {
     const {user, authenticated, handleLogout} = useContext(GlobalContext)
@@ -24,15 +25,7 @@ export default function Header () {
     }
     else if (!authenticated && location.pathname === "/"){
         return(
-            <header className="header_full_container">
-                <div className="main_container">
-                    <img className="header_logo" src={logo} alt="logo"></img>
-                    <div>
-                        <Link to="/sign_up?role=1">Cadastre-se</Link>
-                        <Link to="/login">Entrar</Link>
-                    </div>
-                </div>
-            </header>
+            <HeaderHome/>
         )
     }
     else if (authenticated && user.role === "Cliente"){
@@ -97,6 +90,10 @@ export default function Header () {
                     <Link to="/admin/list_users">
                         <img className="header_logo" src={logo} alt="logo"></img>
                     </Link>
+                    <div className="header_buttons">
+                        <button >Sair</button>
+
+                    </div>
                 </div>
             </header>
         )

@@ -1,58 +1,26 @@
-.header_logo{
-    width: 120px;
-    height: 80px;
+header{
+    background-color: var(--purple);
 }
-.header_full_container{
-    background-color: #e5e5e5;
-}
-.header_full_container .main_container{
+
+header .main_container{
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
 
+.logo-ceb{
+    max-height: 80px;
+    padding: 10px 0;
 }
-.header_login{
-    width: 60%;
-    background-color: #e5e5e5;
-}
-.header_buttons{
-    display: flex;
-}
-.dropdown-toggle{
-    border: none;
-    background: none;
-}
-.dropdown-menu{
-    display: flex;
-    flex-direction: column;
-    background-color: #c6c6c6;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 20px;
-}
-.dropdown-menu .dropdown-item{
-    margin: 10px 20px;
-}
-.dropdown-menu a{
-    text-decoration: none;
+
+.home-button-login{
+    border: 0;
+    background-color: var(--cyan);
     color: #333;
+    font-size: 1.0rem;
+    padding: 10px 25px;
+    border-radius: 5px;
 }
-.dropdown-header{
-    font-weight: bolder;
-    margin: 15px 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.dropdown-header::after{
-    content:"";
-    background-color: #333;
-    width: 50%;
-    height: 2px;
-    margin: 3px 0;
-} 
-.carrinho{
-    height: 100vmin;
-    width: 250px;
+.home-button-login:hover{
+    background-color: var(--blue);
 }
