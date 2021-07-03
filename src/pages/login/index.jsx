@@ -28,17 +28,17 @@ export default function Login () {
                     <Link to="/">{"<"}</Link>
                     <h3>Faça login</h3>
                 </div>
-                <div>
+                <div className="form_inputs">
                     <fieldset>
                         <label htmlFor="credential">Digite seu cpf ou email</label>
-                        <input value={credential} name="credential" onChange={e => setCredential(e.target.value)}></input>
+                        <input className="main_input" value={credential} name="credential" onChange={e => setCredential(e.target.value)}></input>
                     </fieldset>
                     <fieldset>
                         <label htmlFor="password">Digite sua senha</label>
-                        <input type="password" value={password} name="password" onChange={e => setPassword(e.target.value)}></input>
+                        <input className="main_input" type="password" value={password} name="password" onChange={e => setPassword(e.target.value)}></input>
                     </fieldset>
+                    <input className="main_button" type="submit" value="Fazer login"></input>
                 </div>
-                <input className="main_button" type="submit" value="Fazer login"></input>
             </form>
         </section>
     )

@@ -13,14 +13,3 @@ header .main_container{
     padding: 10px 0;
 }
 
-.home-button-login{
-    border: 0;
-    background-color: var(--cyan);
-    color: #333;
-    font-size: 1.0rem;
-    padding: 10px 25px;
-    border-radius: 5px;
-}
-.home-button-login:hover{
-    background-color: var(--blue);
-}

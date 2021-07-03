@@ -4,35 +4,47 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background-color: #e5e5e5;
+    background-color: var(--purple);
+    border-radius: 0 50vh 50vh 0;
+}
+.form_title_div{
+    display: flex;
 }
 .form_login_container{
-    background-color: #c6c6c6;
-    width: 300px;
-    margin-right: -150px;
-    padding: 50px 0;
+    background-color: var(--yellow);
+    margin-right: -200px;
+    padding: 5px 5px;
+    border-radius: 20px;
+    min-height: 500px;
+    min-width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.form_login_container .form_title_div{
-    margin-bottom: 50px;
-    margin-top: -50px;
-}
 .form_login_container a{
     text-decoration: none;
     font-size: 32px;
+    margin-bottom: 15px;
     width: fit-content;
     font-weight: bolder;
     color: #333;
+    align-self: start;
+}
+.form_inputs{
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .form_login_container fieldset{
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-    width: 100%;
 }
-.form_login_container > div:last-of-type{
-    margin: 60px 30px;
-    width: 90%;
+.form_login_container .main_button{
+    margin-top: 20px;
+}
+.form_login_container label{
+    margin-bottom: 10px;
 }

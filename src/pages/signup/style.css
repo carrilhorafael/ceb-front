@@ -15,10 +15,13 @@
     width: fit-content;
     font-weight: bolder;
     color: #333;
+    align-self: start;
 }
 .form_title_div{
     display: flex;
+    align-items: center;
     flex-direction: column;
+    padding: 5px;
     font-weight: bold;
     width: 100%;
 }

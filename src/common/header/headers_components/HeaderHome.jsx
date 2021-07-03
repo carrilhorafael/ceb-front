@@ -9,7 +9,7 @@ export default function HeaderHome (){
         <header>
             <nav className="main_container">
                 <Link to="/"> <img className="logo-ceb" src={logo}/></Link>
-                <Link to="login"><button className="home-button-login">Entrar</button></Link>
+                <Link to="login"><button className="main_button">Entrar</button></Link>
             </nav>
         </header>
     )

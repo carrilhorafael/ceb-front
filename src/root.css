@@ -77,14 +77,20 @@ h1{
 	border: 0
 }
 .main_button {
-    background-color: var(--purple);
-    color: #fafafa;
-    padding: 10px 30px;
-	margin: 0 auto;
 	box-shadow: 3px 3px #33333330;
 	border: 0;
+    background-color: var(--cyan);
+    color: #333;
+    font-size: 1.0rem;
+    padding: 10px 25px;
+    border-radius: 5px;
 }
 .main_button:hover{
-	background-color: var(--cyan);
-	color: #333
+	background-color: var(--blue);
+}
+.main_input{
+	background-color: #fafafa;
+	padding: 10px 0;
+	border-radius: 10px;
+	border: none;
 }
