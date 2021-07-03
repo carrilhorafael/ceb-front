@@ -16,11 +16,9 @@ export default function Header () {
 
     if (!authenticated && location.pathname === "/sign_up"){    
         return (
-            <header className="header_full_container">
-                <div className="main_container">
-                    <img className="header_logo" src={logo} alt="logo"></img>
-                </div>
-            </header>
+            <div className="main_container">
+                <Link to="/"> <img className="logo-ceb" src={logo}/></Link>
+            </div>
         )
     }
     else if (!authenticated && location.pathname === "/"){

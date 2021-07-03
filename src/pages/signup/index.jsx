@@ -42,58 +42,60 @@ export default function SignUp () {
     }
     return (
         <main>
-            <form className="form_container" onSubmit={handleSubmit}>
+            <form className="form_signup_container" onSubmit={handleSubmit}>
                 <div className="form_title_div">
                     <Link to="/">{"<"}</Link>
                     <h3>Cadastre-se</h3>
                 </div>
-                <fieldset>
-                    <label htmlFor="name">Nome</label>
-                    <input value={name} name="name" onChange={e => setName(e.target.value)}></input>
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="email">Email</label>
-                    <input value={email} name="email" onChange={e => setEmail(e.target.value)}></input>
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="cpf">CPF</label>
-                    <input value={cpf} name="cpf" onChange={e => setCpf(e.target.value)}></input>
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="phone">Telefone</label>
-                    <input value={phone} name="phone" onChange={e => setPhone(e.target.value)}></input>
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="password">Digite sua senha</label>
-                    <input type="password" value={password} name="password" onChange={e => setPassword(e.target.value)}></input>
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="password_confirmation">Confirme sua senha</label>
-                    <input type="password" value={password_confirmation} name="password_confirmation" onChange={e => setPasswordConfirmation(e.target.value)}></input>
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="street">Rua</label>
-                    <input value={street} name="street" onChange={e => setStreet(e.target.value)}></input>
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="number">Numero</label>
-                    <input value={number} name="number" onChange={e => setNumber(e.target.value)}></input>
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="city">Cidade</label>
-                    <input value={city} name="city" onChange={e => setCity(e.target.value)}></input>
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="state">Estado</label>
-                    <input value={state} name="state" onChange={e => setState(e.target.value)}></input>
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="role">Escolha uma função para se cadastrar</label>
-                    <select value={role} name="role" onChange={e => setRole(e.target.value)}>
-                        <option value={1}>Cliente</option>
-                        <option value={2}>Entregador</option>
-                    </select>
-                </fieldset>
+                <div className="form_signup">
+                    <fieldset>
+                        <label htmlFor="name">Nome</label>
+                        <input className="main_input" value={name} name="name" onChange={e => setName(e.target.value)}></input>
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="email">Email</label>
+                        <input className="main_input" value={email} name="email" onChange={e => setEmail(e.target.value)}></input>
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="cpf">CPF</label>
+                        <input className="main_input" value={cpf} name="cpf" onChange={e => setCpf(e.target.value)}></input>
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="phone">Telefone</label>
+                        <input className="main_input" value={phone} name="phone" onChange={e => setPhone(e.target.value)}></input>
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="password">Digite sua senha</label>
+                        <input className="main_input" type="password" value={password} name="password" onChange={e => setPassword(e.target.value)}></input>
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="password_confirmation">Confirme sua senha</label>
+                        <input className="main_input" type="password" value={password_confirmation} name="password_confirmation" onChange={e => setPasswordConfirmation(e.target.value)}></input>
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="street">Rua</label>
+                        <input className="main_input" value={street} name="street" onChange={e => setStreet(e.target.value)}></input>
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="number">Numero</label>
+                        <input className="main_input" value={number} name="number" onChange={e => setNumber(e.target.value)}></input>
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="city">Cidade</label>
+                        <input className="main_input" value={city} name="city" onChange={e => setCity(e.target.value)}></input>
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="state">Estado</label>
+                        <input className="main_input" value={state} name="state" onChange={e => setState(e.target.value)}></input>
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="role">Escolha uma função para se cadastrar</label>
+                        <select className="main_input" value={role} name="role" onChange={e => setRole(e.target.value)}>
+                            <option value={1}>Cliente</option>
+                            <option value={2}>Entregador</option>
+                        </select>
+                    </fieldset>
+                </div>  
                 <input className="main_button" type="submit" value="Cadastrar"></input>
             </form>
         </main>
