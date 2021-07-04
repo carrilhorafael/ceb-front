@@ -8,13 +8,14 @@
 }
 
 .index_grid_item{
-    background-color: #e5e5e5;
+    background-color: var(--yellow);
     padding: 30px 15px;
     display: flex;
 }
 .index_grid_item:hover{
-    background-color: var(--purple);
+    background-color: var(--orange);
     color: #fafafa;
+    font-weight: bold;
 }
 .index_grid_item div {
     display: flex;

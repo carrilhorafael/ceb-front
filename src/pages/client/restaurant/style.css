@@ -1,15 +1,18 @@
-.index_grid_restaurants{
+.index_grid_restaurant{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-
+    row-gap: 5px;
+    column-gap: 5px;
+    margin-top: 60px;
 }
-
-.index_grid_item{
-    background-color: #e5e5e5;
+.info_checkin{
+    text-align: center;
+}
+/* .index_grid_item{
+    background-color: var(--orange);
     padding: 10px;
-    margin: 5px;
     display: flex;
-}
+} */
 .index_grid_item:hover{
     background-color: rebeccapurple;
 }
@@ -43,7 +46,19 @@
 }
 
 .section_restaurant{
+    margin-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.section_restaurant h3{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.section_restaurant p{
+    margin: 5px;
+}
+/* .restaurant.main_container{
+    position: relative;
+} */
