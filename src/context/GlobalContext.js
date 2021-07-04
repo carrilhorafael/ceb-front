@@ -1,3 +1,4 @@
+// import { Alert } from 'bootstrap'
 import React, {useEffect} from 'react'
 import {api, authTokenVerification, fetchLogin} from '../service/Api'
 
@@ -6,20 +7,21 @@ export const GlobalContext = React.createContext()
 export const GlobalProvider = ({children}) => {
     const [user, setUser] = React.useState({})
     const [authenticated, setAuthenticated] = React.useState(false)
+    // const history = useHistory()
     useEffect(() => {
-        if (localStorage.getItem("user") !== null){
-            authTokenVerification().then(()=>{
+        if (localStorage.getItem("user") !== null && localStorage.getItem("token") !== null){
+            authTokenVerification(localStorage.getItem("token"))
+            .then(()=>{
                 setUser(JSON.parse(localStorage.getItem("user")))
                 api.defaults.headers.Authorization = localStorage.getItem("token")
-                setAuthenticated(true)
-            }).catch(()=>{
+                setAuthenticated(true)})
+            .catch(()=>{
+                console.log("entrou no catch")
                 localStorage.removeItem("token")
                 localStorage.removeItem("user")
                 setUser({})
-                setAuthenticated(false)
-            })
+                setAuthenticated(false)})
         }
-        console.log(authenticated, user)
     }, [])
 
     const handleLogin = (userData, history) => {

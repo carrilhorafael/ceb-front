@@ -20,8 +20,10 @@ export function getAllRestaurants (){
     return api.get("restaurants")
 }
 
-export function authTokenVerification(){
-    return api.get("auth/validate_token")
+export function authTokenVerification(token){
+    return api.get("auth/validate_user", {
+        headers: {"Authorization": token}
+    })
 }
 
 export function getUniqueRestaurant (id){
