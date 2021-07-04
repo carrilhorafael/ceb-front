@@ -61,3 +61,7 @@ export function updateUser(userData, userId){
 export function getHistory(){
     return api.get("/carts/history")
 }
+
+export function changeStatus(cartId){
+    return api.post("/orders/change/"+cartId, {})
+}

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import { deleteCart, deleteOrder, getCart } from '../../../service/Api'
+import { changeStatus, deleteCart, deleteOrder, getCart } from '../../../service/Api'
 import './style.css'
 
 export default function Cart () {
@@ -17,6 +17,13 @@ export default function Cart () {
     const handleCartDestroy = () => {
         deleteCart(cart.restaurant.id)
         .then(() => {
+            setCart()
+        })
+    }
+    const handlePurchase = () => {
+        changeStatus(cart.id)
+        .then(({data})=>{
+            alert("Seu pedido foi confirmado!")
             setCart()
         })
     }
@@ -54,7 +61,7 @@ export default function Cart () {
                     ))}
                     <div className="div_buttons_cart">
                         <button className="secondary_button" onClick={handleCartDestroy}>Apagar o carrinho</button>
-                        <button className="main_button">Finalizar a compra</button>
+                        <button className="main_button" onClick={handlePurchase}>Finalizar a compra</button>
                     </div>
                 </div>
                 
