@@ -24,7 +24,8 @@ export default function Routes (){
                 {authenticated?
                     user.role === "Cliente"? 
                         <>
-                            {/**************** CLIENT PAGES ****************/}
+                            {/**************** CLIENT PAGES ****************/}  
+                            <Route exact path="/edit_profile" component={EditProfile}/>
                             <Route exact path="/client/restaurants" component={Restaurants} /> 
                             <Route exact path="/client/restaurant" component={RestaurantShow} />
                             <Route exact path="/client/cart" component={Cart} />

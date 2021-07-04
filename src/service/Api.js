@@ -41,3 +41,15 @@ export function getUsers (){
 export function postOrder( dataOrder ){
     return api.post("/orders", dataOrder)
 }
+
+export function getCart (){
+    return api.get("/orders")
+}
+
+export function deleteOrder(orderId){
+    return api.delete("/orders/"+orderId)
+}
+
+export function deleteCart(restaurantId){
+    return api.delete("/carts/"+restaurantId)
+}

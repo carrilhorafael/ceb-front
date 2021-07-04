@@ -88,13 +88,7 @@ h2::after{
 	max-width: 1024px;
 	margin: 0 auto;
 }
-.main_button{
-	background-color: var(--purple);
-    color: #fafafa;
-    padding: 5px 30px;
-    margin: 0 auto;
-	border: 0
-}
+
 .main_button {
 	box-shadow: 3px 3px #33333330;
 	border: 0;
@@ -103,9 +97,24 @@ h2::after{
     font-size: 1.0rem;
     padding: 10px 25px;
     border-radius: 5px;
+	cursor: pointer;
 }
 .main_button:hover{
 	background-color: var(--blue);
+}
+.secondary_button{
+	box-shadow: 3px 3px #33333330;
+	border: 0;
+    background-color: var(--orange);
+    color: #333;
+    font-size: 1.0rem;
+    padding: 10px 25px;
+    border-radius: 5px;
+	cursor: pointer;
+
+}
+.secondary_button:hover{
+	background-color: var(--yellow);
 }
 .main_input{
 	box-shadow: 3px 3px #33333330;
