@@ -1,0 +1,26 @@
+.form_edit{
+    width: 60%;
+    margin: 20px auto;
+    border-radius: 30px;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--yellow);
+}
+.form_edit form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.form_edit fieldset{
+    display: flex;
+    flex-direction: column;
+}
+.form_edit label{
+    margin-bottom: 5px;
+}
+.form_edit .main_button{
+    margin: 15px auto;
+    width: 40%;
+}

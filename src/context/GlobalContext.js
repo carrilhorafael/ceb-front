@@ -6,14 +6,16 @@ export const GlobalContext = React.createContext()
 
 export const GlobalProvider = ({children}) => {
     const [user, setUser] = React.useState({})
-    const [authenticated, setAuthenticated] = React.useState(false)
+    const [authenticated, setAuthenticated] = React.useState()
     // const history = useHistory()
     useEffect(() => {
         if (localStorage.getItem("user") !== null && localStorage.getItem("token") !== null){
             authTokenVerification(localStorage.getItem("token"))
-            .then(()=>{
-                setUser(JSON.parse(localStorage.getItem("user")))
-                api.defaults.headers.Authorization = localStorage.getItem("token")
+            .then(({data})=>{
+                setUser(data.user)
+                api.defaults.headers.Authorization = data.token
+                localStorage.setItem("user", JSON.stringify(data.user))
+                localStorage.setItem("token", data.token)
                 setAuthenticated(true)})
             .catch(()=>{
                 console.log("entrou no catch")

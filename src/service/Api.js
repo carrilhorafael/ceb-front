@@ -53,3 +53,7 @@ export function deleteOrder(orderId){
 export function deleteCart(restaurantId){
     return api.delete("/carts/"+restaurantId)
 }
+
+export function updateUser(userData, userId){
+    return api.put("/users/"+userId, userData)
+}
