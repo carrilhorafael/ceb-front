@@ -60,3 +60,11 @@
 .modal-footer button:hover{
     background-color: var(--blue);
 }
+.modal-body fieldset{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-body label{
+    margin-bottom: 10px;
+}

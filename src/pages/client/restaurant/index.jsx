@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ModalFood from '../../../common/modal/ModalFood'
-import {getUniqueRestaurant} from '../../../service/Api'
+import {getUniqueRestaurant, postOrder} from '../../../service/Api'
 import './style.css'
 
 export default function RestaurantShow () {
@@ -11,13 +11,25 @@ export default function RestaurantShow () {
         let id = window.location.href.split("?id=")[1]
         getUniqueRestaurant(id).then(({data}) => {
             setRestaurant(data)
-            console.log(data.products[0])
             setFoodShow(data.products[0])
         })
     }, [])
     const handleModal = product => {
         setFoodShow(product)
         setShow(true)
+    }
+    const addProduct = (food, quantity) => {
+        let dataFood = {
+            order:{
+                restaurant_id: restaurant.id,
+                product_id: food.id,
+                quantity: parseInt( quantity )
+            }
+        }
+        postOrder(dataFood).then(({data}) => {
+            alert("Carrinho atualizado")
+            setShow(false)
+        })
     }
     return (
         <>
@@ -28,7 +40,7 @@ export default function RestaurantShow () {
                             show={show}
                             toggleShow={()=>setShow(false)}
                             food={foodShow}
-                            
+                            addProduct={addProduct}
                             />
                         <section className="section_restaurant">
                             <div>

@@ -5,11 +5,13 @@ export default function Cart () {
 
     return (
         <div>
-            <h3>Carrinho</h3>
+            <h2>Seu carrinho</h2>
             {!cart?
-                <p>Você não tem nada no carrinho</p>
+                <div className="main_container">
+                    <p>Você não tem nada no carrinho</p>
+                </div>
                 :
-                <div>
+                <div className="main_container">
                     <p>Total: 1000 reais</p>
                 </div>
                 

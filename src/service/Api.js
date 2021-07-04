@@ -37,3 +37,7 @@ export function getDeliverymen (){
 export function getUsers (){
     return api.get("/users")
 }
+
+export function postOrder( dataOrder ){
+    return api.post("/orders", dataOrder)
+}
