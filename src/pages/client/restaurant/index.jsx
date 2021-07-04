@@ -16,7 +16,6 @@ export default function RestaurantShow () {
             {restaurant?
                 <>
                     <section className="section_restaurant">
-
                         <div>
                             <h3>{restaurant.name}</h3>
                             <p>{restaurant.type_food}</p>
@@ -24,7 +23,6 @@ export default function RestaurantShow () {
                             <p>{restaurant.working_at}</p>
                         </div>
                         <div className="restaurant_image">
-
                         </div>
                     </section>
                     <div className="index_grid_restaurants">
