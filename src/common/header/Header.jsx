@@ -6,6 +6,7 @@ import { useLocation } from 'react-router'
 import { Link } from 'react-router-dom'
 import HeaderHome from './headers_components/HeaderHome'
 import HeaderClient from './headers_components/HeaderClient'
+import HeaderOwner from './headers_components/HeaderOwner'
 
 export default function Header () {
     const {user, authenticated} = useContext(GlobalContext)
@@ -41,13 +42,7 @@ export default function Header () {
     }
     else if (authenticated && user.role === "Dono de restaurante"){
         return(
-            <header className="header_full_container">
-                <div className="main_container">
-                    <Link to="/owner/restaurant">
-                        <img className="header_logo" src={logo} alt="logo"></img>
-                    </Link>
-                </div>
-            </header>
+            <HeaderOwner/>
         )
     }
     else if(authenticated && user.role === "Administrador"){

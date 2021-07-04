@@ -7,10 +7,10 @@ export default function HeaderHome (){
 
     return (
         <header>
-            <nav className="main_container">
+            <div className="main_container">
                 <Link to="/"> <img className="logo-ceb" src={logo}/></Link>
                 <Link to="login"><button className="main_button">Entrar</button></Link>
-            </nav>
+            </div>
         </header>
     )
 

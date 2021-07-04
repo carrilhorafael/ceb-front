@@ -36,7 +36,7 @@ export default function HeaderClient(){
                     svgtoggle={usersvg}
                     header={`Olá, ${user.name.split(" ")[0]}`}
                     />
-                    <Link to="/client/cart" className='dropdown-toggle'>
+                    <Link to="/client/cart" className='button_cart dropdown-toggle'>
                         <img src={carrinho}></img>
                     </Link>
                 </div>

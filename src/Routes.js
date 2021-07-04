@@ -12,6 +12,7 @@ import Confirmate from './pages/confirmate'
 import EditProfile from './pages/edit_profile'
 import Landing from './pages/landing'
 import Login from './pages/login'
+import RestaurantManagement from './pages/owner/restaurant'
 import SignUp from './pages/signup'
 
 export default function Routes (){
@@ -36,6 +37,7 @@ export default function Routes (){
                     user.role === "Entregador" || user.role === "Entregador (Em validação)"?
                         <>
                             {/**************** DELIVERYMAN PAGES ****************/}
+                            <Route exact path="/edit_profile" component={EditProfile}/>
                             <Route exact path="/delivery/deliveries" component={Restaurants}/>
                             <Route exact path="/delivery/wallet" component={Restaurants}/>
                             <Route path="*"> <Redirect to="/delivery/deliveries"/> </Route>
@@ -44,16 +46,18 @@ export default function Routes (){
                     user.role === "Dono de restaurante"?
                         <>
                             {/**************** OWNER PAGES ****************/}
-                            <Route exact path="/owner/restaurant" component={Restaurants}/>
+                            <Route exact path="/edit_profile" component={EditProfile}/>
+                            <Route exact path="/owner/restaurant" component={RestaurantManagement}/>
+                            <Route exact path="/owner/stock" component={RestaurantManagement}/>
                             <Route exact path="/owner/create_restaurant" component={Restaurants}/>
                             <Route exact path="/owner/results" component={Restaurants}/>
                             <Route exact path="/owner/orders" component={Restaurants}/>
-                            <Route exact path="/owner/products" component={Restaurants}/>
                             <Route path="*"> <Redirect to="/owner/restaurant"/> </Route>
                         </>
                     :
-                        <>
+                    <>
                             {/**************** ADMIN PAGES ****************/}
+                            <Route exact path="/edit_profile" component={EditProfile}/>
                             <Route exact path="/admin/list_users" component={ListUsers}/>
                             <Route exact path="/admin/list_deliverymen" component={Delivermen}/>
                             <Route path="*"> <Redirect to="/admin/list_users"/> </Route>

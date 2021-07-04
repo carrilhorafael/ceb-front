@@ -21,8 +21,8 @@ header .main_container{
     background: none;
     border: none;
 }
-.button_dropdown{
-    margin-right: 30px;
+.button_cart{
+    margin-left: 30px;
 }
 .dropdown-menu{
     background-color: #c4c4c4;
@@ -30,6 +30,27 @@ header .main_container{
     flex-direction: column;
     width: 200px;
     align-items: center;
+}
+.link_header{
+    color: #fafafa;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+header .main_container nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.link_header.active::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    margin-top: 5px;
+    background-color: #fafafa;
 }
 .dropdown-header{
     font-size: 1.4rem;
