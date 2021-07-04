@@ -1,0 +1,12 @@
+.div_evaluating{
+    display: flex
+}
+.button_evaluating{
+    background: none;
+    border: none;
+}
+.star{
+    width: 20px;
+    height: 20px;
+}
+

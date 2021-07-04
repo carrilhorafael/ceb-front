@@ -57,3 +57,7 @@ export function deleteCart(restaurantId){
 export function updateUser(userData, userId){
     return api.put("/users/"+userId, userData)
 }
+
+export function getHistory(){
+    return api.get("/carts/history")
+}
