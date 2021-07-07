@@ -19,6 +19,9 @@
     display: flex;
     justify-content: flex-end;
 }
+.modal-dialog{
+    width: 100%;
+}
 .modal-header{
     display: flex;
     justify-content: space-between;
@@ -63,6 +66,7 @@
 .modal-body fieldset{
     display: flex;
     justify-content: space-between;
+    padding: 5px 0;
     align-items: center;
 }
 .modal-body label{

@@ -11,7 +11,7 @@ export default function HeaderDropdown ({svgtoggle, header, menu, className}){
             <Dropdown.Menu id="dropdown-menu">
                 <Dropdown.Header>{header}</Dropdown.Header>
                 {menu.map(item => (
-                    <Dropdown.Item onClick={item.onClick}>{item.nome}</Dropdown.Item>
+                    <Dropdown.Item key={item.nome} onClick={item.onClick}>{item.nome}</Dropdown.Item>
                     ))
                 }
                 

@@ -1,0 +1,13 @@
+.add_prato_div{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    justify-self: flex-end;
+}
+.add_prato_div p{
+    margin-right: 15px;
+}
+.button_add{
+    background: none;
+    border-radius: 50%;
+}

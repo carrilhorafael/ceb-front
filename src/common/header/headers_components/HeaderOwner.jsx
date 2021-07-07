@@ -25,7 +25,7 @@ export default function HeaderOwner(){
                 <HeaderDropdown menu={[
                     {
                         nome: "Carteira",
-                        onClick: () => history.push('/client/wallet')
+                        onClick: () => history.push('/owner/wallet')
                     },
                     {
                         nome: "Editar dados",
