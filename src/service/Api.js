@@ -65,3 +65,7 @@ export function getHistory(){
 export function changeStatus(cartId){
     return api.post("/orders/change/"+cartId, {})
 }
+
+export function postProduct(product){
+    return api.post("/products", product)
+}

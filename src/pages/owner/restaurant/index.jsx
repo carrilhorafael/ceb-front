@@ -7,23 +7,30 @@ import './style.css'
 export default function RestaurantManagement(){
     const {user} = useContext(GlobalContext)
     const [restaurant, setRestaurant] = useState({})
+    const [products, setProducts] = useState([])
     const [show, setShow] = useState(false)
 
     useEffect(()=>{
         getUniqueRestaurant(user.restaurant.id)
         .then(({data}) => {
             setRestaurant(data)
+            setProducts(data.products)
         })
     }, [])
     
     return(
         <main>
-            <ModalAddFood restaurant_id={restaurant.id} show={show} toggleShow={()=> setShow(!show)}/>
+            <ModalAddFood 
+                restaurant_id={restaurant.id} 
+                show={show} 
+                toggleShow={()=> setShow(!show)} 
+                products={products} 
+                setProducts={setProducts}/>
             <h2>Gestão de restaurante</h2>
-                {restaurant.products?
+                {products?
                     <div className="main_container">
                         <div className="index_grid_restaurant">
-                            {restaurant.products.map(product => (
+                            {products.map(product => (
                                 <div key={product.id} onClick={() => console.log(product)} className="index_grid_item">
                                     <div className="productLogo"></div>
                                     <div>
