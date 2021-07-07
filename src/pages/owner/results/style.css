@@ -1,0 +1,29 @@
+.results_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5px;
+    row-gap: 5px;
+    height: 50vh;
+}
+.results_item_grid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--blue);
+}
+.result_title{
+    font-weight: bold;
+    padding: 20px 0;
+    font-size: 1.2rem;
+}
+.result_title ~ p{
+    margin:auto;
+    font-size: 3.6rem;
+}
+.result_title ~ div{
+    margin: auto;
+}
+.result_title ~ div img{
+    width: 60px;
+    height: 60px;
+}

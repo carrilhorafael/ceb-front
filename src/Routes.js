@@ -13,6 +13,8 @@ import EditProfile from './pages/edit_profile'
 import Landing from './pages/landing'
 import Login from './pages/login'
 import RestaurantManagement from './pages/owner/restaurant'
+import RestaurantResults from './pages/owner/results'
+import RestaurantStock from './pages/owner/stock'
 import SignUp from './pages/signup'
 
 export default function Routes (){
@@ -48,9 +50,9 @@ export default function Routes (){
                             {/**************** OWNER PAGES ****************/}
                             <Route exact path="/edit_profile" component={EditProfile}/>
                             <Route exact path="/owner/restaurant" component={RestaurantManagement}/>
-                            <Route exact path="/owner/stock" component={RestaurantManagement}/>
+                            <Route exact path="/owner/stock" component={RestaurantStock}/>
                             <Route exact path="/owner/create_restaurant" component={Restaurants}/>
-                            <Route exact path="/owner/results" component={Restaurants}/>
+                            <Route exact path="/owner/results" component={RestaurantResults}/>
                             <Route exact path="/owner/orders" component={Restaurants}/>
                             <Route path="*"> <Redirect to="/owner/restaurant"/> </Route>
                         </>
