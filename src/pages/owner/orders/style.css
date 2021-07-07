@@ -1,4 +1,4 @@
-.carts_history{
+.carts_restaurant{
     background-color: var(--yellow);
     display: flex;
     margin: 15px 0;
@@ -7,17 +7,15 @@
     align-items: center;
     position: relative;
 }
-
-.carts_history div:first-child{
+.carts_restaurant div:first-child{
     display: flex;
     flex-direction: column;
 }
-.carts_history div:first-child p:first-child{
+.carts_restaurant div:first-child .cart_item{
     font-size: 16px;
+    padding: 5px 0;
     color: #666;
 }
-
-
 .restaurant_evaluated{
     display: none;
     justify-content: center;
@@ -32,6 +30,14 @@
     height: 100%;
     cursor: pointer;
 }
-.carts_history:hover .restaurant_evaluated {
+.restaurant_evaluated p{
+    color:darkgreen;
+}
+.carts_restaurant:hover .restaurant_evaluated {
     display: flex;
+}
+.carts_restaurant .restaurant_name{
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 0;
 }

@@ -27,29 +27,32 @@ export default function RestaurantManagement(){
                 products={products} 
                 setProducts={setProducts}/>
             <h2>Gestão de restaurante</h2>
-                {products?
-                    <div className="main_container">
-                        <div className="index_grid_restaurant">
-                            {products.map(product => (
-                                <div key={product.id} onClick={() => console.log(product)} className="index_grid_item">
-                                    <div className="productLogo"></div>
-                                    <div>
-                                        <p className="productName">{product.name}</p>
-                                        <p className="productPrice">R$ {product.price.toFixed(2)}</p>
+                <div className="main_container">
+                    <p>Nome do restaurante: {restaurant.name}</p>
+                    {products?
+                        <>
+                            <div className="index_grid_restaurant">
+                                {products.map(product => (
+                                    <div key={product.id} onClick={() => console.log(product)} className="index_grid_item">
+                                        <div className="productLogo"></div>
+                                        <div>
+                                            <p className="productName">{product.name}</p>
+                                            <p className="productPrice">R$ {product.price.toFixed(2)}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="add_prato_div">
-                            <p>Criar novo prato</p>
-                            <button className="button_add" onClick={()=> setShow(true)}>+</button>
-                        </div>
-                    </div>
-                :
-                    <div className="main_container">
-                        <p>Carregando informações...</p>
-                    </div>
-                }
+                                ))}
+                            </div>
+                            <div className="add_prato_div">
+                                <p>Criar novo prato</p>
+                                <button className="button_add" onClick={()=> setShow(true)}>+</button>
+                            </div>
+                        </>
+                    :
+                        <>
+                            <p>Carregando informações...</p>
+                        </>
+                    }
+                </div>
 
         </main>
     )
