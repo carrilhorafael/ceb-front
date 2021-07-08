@@ -8,7 +8,7 @@ import { GlobalContext } from '../../../context/GlobalContext'
 
 export default function HeaderAdmin(){
     const location = useLocation()
-    const history = useLocation()
+    const history = useHistory()
     const {user, handleLogout} = useContext(GlobalContext)
     return(
         <header>

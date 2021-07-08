@@ -12,7 +12,6 @@ export default function ListUsers (){
         getUsers().then(({data})=>{
             setUsersAll(data)
             setUsers(data.slice(0, usersPerPage*page))
-            console.log(usersAll)
         })
     }, [])
     
