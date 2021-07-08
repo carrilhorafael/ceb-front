@@ -5,11 +5,11 @@ import usersvg from '../../../assets/user.svg'
 import HeaderDropdown from './HeaderDropdown'
 import { useHistory, useLocation } from 'react-router'
 import { GlobalContext } from '../../../context/GlobalContext'
-export default function HeaderOwner(){
-    const history = useHistory()
-    const location = useLocation()
-    const{user, handleLogout} = useContext(GlobalContext)
 
+export default function HeaderAdmin(){
+    const location = useLocation()
+    const history = useLocation()
+    const {user, handleLogout} = useContext(GlobalContext)
     return(
         <header>
             <div className="main_container">
@@ -17,10 +17,9 @@ export default function HeaderOwner(){
                     <Link to="/owner/restaurant">
                         <img className="logo-ceb" src={logo} alt="logo"></img>
                     </Link>
-                    <Link to="/owner/restaurant" className={`link_header ${location.pathname === "/owner/restaurant" ? "active" : ""}` }>Gestão de Restaurante</Link>
-                    <Link to="/owner/stock" className={`link_header ${location.pathname === "/owner/stock" ? "active" : ""}`}>Gestão de Estoque</Link>
-                    <Link to="/owner/results" className={`link_header ${location.pathname === "/owner/results" ? "active" : ""}`}>Resultados</Link>
-                    <Link to="/owner/orders" className={`link_header ${location.pathname === "/owner/orders" ? "active" : ""}`}>Pedidos</Link>
+                    <Link to="/admin/list_users" className={`link_header ${location.pathname === "/admin/list_users" ? "active" : ""}` }>Lista de Usuário</Link>
+                    <Link to="/admin/list_deliverymen" className={`link_header ${location.pathname === "/admin/list_deliverymen" ? "active" : ""}`}>Admissão de Entregadores</Link>
+                    <Link to="/admin/register_owner" className={`link_header ${location.pathname === "/admin/register_owner" ? "active" : ""}`}>Cadastrar dono de restaurante</Link>
                 </nav> 
                 <HeaderDropdown menu={[
                     {

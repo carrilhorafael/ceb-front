@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import HeaderHome from './headers_components/HeaderHome'
 import HeaderClient from './headers_components/HeaderClient'
 import HeaderOwner from './headers_components/HeaderOwner'
+import HeaderAdmin from './headers_components/HeaderAdmin'
 
 export default function Header () {
     const {user, authenticated} = useContext(GlobalContext)
@@ -47,17 +48,7 @@ export default function Header () {
     }
     else if(authenticated && user.role === "Administrador"){
         return (
-            <header className="header_full_container">
-                <div className="main_container">
-                    <Link to="/admin/list_users">
-                        <img className="header_logo" src={logo} alt="logo"></img>
-                    </Link>
-                    <div className="header_buttons">
-                        <button >Sair</button>
-
-                    </div>
-                </div>
-            </header>
+            <HeaderAdmin/>
         )
     }
     else {

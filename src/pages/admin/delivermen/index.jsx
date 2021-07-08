@@ -11,7 +11,7 @@ export default function Delivermen (){
     }, [])
     return (
         <>
-            <h1>Admissão de Entregadores</h1>
+            <h2>Admissão de Entregadores</h2>
             {deliverymen.map(item => (
                 <div key={item.id}>
                     <p>{item.name}</p>

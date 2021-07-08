@@ -63,6 +63,7 @@ export default function Routes (){
                             <Route exact path="/edit_profile" component={EditProfile}/>
                             <Route exact path="/admin/list_users" component={ListUsers}/>
                             <Route exact path="/admin/list_deliverymen" component={Delivermen}/>
+                            <Route exact path="/admin/register_owner" component={Delivermen}/>
                             <Route path="*"> <Redirect to="/admin/list_users"/> </Route>
                         </>
                 :
